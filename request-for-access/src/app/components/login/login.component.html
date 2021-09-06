@@ -1,0 +1,23 @@
+<div class="main-login">
+    <div class="main-child">
+        <div class="pre-child">
+            <h1>Please sign in</h1>
+        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="child">
+                <input formControlName="username" type="username" placeholder="Username" autofocus>
+            </div>
+            <div class="child">
+                <input formControlName="password" type="password" placeholder="Password">
+            </div>
+            <div class="child grid">
+                <input type="checkbox" id="remember-me">
+                <label for="remember-me">Remember me</label>
+            </div>
+            <div class="child">
+                <button [disabled]="loading" type="submit">Sign In</button>
+            </div>
+        </form>
+        <h4>Copyright &copy; 2021</h4>
+    </div>
+</div>

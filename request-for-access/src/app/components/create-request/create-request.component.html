@@ -1,0 +1,41 @@
+
+    <div class="grid-main">
+        <div class="container-header"><app-header  [user]="user"></app-header></div>
+        <div><app-navbar></app-navbar></div>
+        <div class="main-create-ticket div-create-ticket">
+            <form [formGroup]="ticketForm" (ngSubmit)="onSubmit()">
+                <div class="child">
+                    <input formControlName="firstName" type="text" [value]="user.firstName" [placeholder]="user.firstName" readonly>
+                </div>
+                <div class="child">
+                    <input formControlName="lastName" type="text" [value]="user.lastName" [placeholder]="user.lastName" readonly>
+                </div>
+                <div class="child">
+                    <input formControlName="contactNumber" type="text" [value]="user.contactNumber" [placeholder]="user.contactNumber" readonly>
+                </div>
+                <div class="child">
+                    <input formControlName="emailId" type="email" [value]="user.emailId" [placeholder]="user.emailId" readonly>
+                </div>
+                <div class="child">
+                    <input formControlName="address" type="text" [value]="user.address" [placeholder]="user.address" readonly>
+                </div>
+                <div class="child">
+                    <select formControlName="privileges" autofocus>
+                        <option value="2">Admin</option>
+                        <option value="3">Executive</option>
+                    </select>
+                </div>
+                <div class="child">
+                    <select formControlName="businessJustification">
+                        <option value="1">Promotion</option>
+                        <option value="2">Security Clearance</option>
+                        <option value="3">Other</option>
+                    </select>
+                </div>
+                <div class="child">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="container-footer"><app-footer></app-footer></div>
+    </div>

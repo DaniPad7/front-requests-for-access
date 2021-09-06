@@ -1,0 +1,53 @@
+.grid-main {
+    display: grid;
+    grid-template: 70px auto 67px / 0fr 1fr;
+    gap: 1px;
+    height: fit-content;
+    border: 3px solid lightblue;
+    grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+}
+
+.container-header {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+    grid-area: header;
+}
+
+.container-footer {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+    grid-area: footer;
+}
+
+.main-create-ticket {
+    margin: 0;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-create-ticket {
+    text-align: center;
+}
+
+.h1-create-ticket {
+    text-transform: uppercase;
+    color: whitesmoke;
+    word-spacing: 10px;
+    text-shadow: 2px 0 black;
+    margin-bottom: 35px;
+}
+
+.span-create-ticket {
+    font-weight: 300;
+    color: gainsboro;
+    background-color: rgba(0, 0, 0, 0.48);
+    padding: 5px 10px;
+}

@@ -1,0 +1,20 @@
+.main-header {
+    height: 100%;
+    background-color: lightblue;
+    font-size: 2.4rem;
+    display: flex;
+    justify-content: right;
+}
+
+h3.header {
+    
+    margin: 0;
+}
+
+
+
+#logout:hover {
+background-color: blue;
+cursor: pointer;
+color: #FFF;
+}

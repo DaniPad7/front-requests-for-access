@@ -1,0 +1,15 @@
+<div class="grid-main">
+    <div class="container-header"><app-header  [user]="user"></app-header></div>
+    <div><app-navbar></app-navbar></div>
+    <div class="main-view-request div-view-request">
+        <div *ngFor="let ticket of requestTickets" class="div-view-request">
+            <h1 class="h1-view-request">{{ticket.ticketId}}</h1>
+            <span class="span-view-request">{{ticket.appUserId.firstName}}</span>
+            <h2>{{ticket.date}}</h2>
+            <h4>{{ticket.privileges.role}}</h4>
+            <h2>{{ticket.businessJustification.justification}}</h2>
+            <h2>{{ticket.statusOption.status}}</h2>
+        </div>
+    </div>
+    <div class="container-footer"><app-footer></app-footer></div>
+</div>

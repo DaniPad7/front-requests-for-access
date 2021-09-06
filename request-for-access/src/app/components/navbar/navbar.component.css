@@ -1,0 +1,34 @@
+.main-nav {
+    height: 100%;
+    background-color: #2a2138;
+}
+
+.container-nav {
+    display: grid;
+    grid-template-columns: [first] 55px [line2] 70%;
+    padding: 15px 0px;
+    font-size: 2rem;
+    color: gray;
+}
+
+.container-nav:hover {
+    background-color: #221a2e;
+    color: white;
+    cursor: pointer;
+}
+
+.icon {
+    place-self: center;
+}
+
+@media screen and (max-width: 1400px) {
+    .main-nav {
+        width: 220px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .main-nav {
+        width: 100%;
+    }
+}

@@ -1,0 +1,36 @@
+<div class="main-nav">
+    <div *ngIf="isAssociate" [routerLink]="['/']" class="container-nav">
+        <div class="icon"><span><i class="fas fa-tachometer-alt"></i></span></div>
+        <div><span>Dashboard</span></div>
+    </div>
+    <div *ngIf="isExecutive" class="container-nav">
+        <div class="icon"><span><i class="fas fa-user"></i></span></div>
+        <div><span>Users</span></div>
+    </div>
+    <div *ngIf="isExecutive" class="container-nav">
+        <div class="icon"><span><i class="fas fa-sitemap"></i></span></div>
+        <div><span>Site</span></div>
+    </div>
+    <div *ngIf="isAdmin || isExecutive" class="container-nav">
+        <div class="icon"><span><i class="fas fa-dollar-sign"></i></span></div>
+        <div><span>Sales</span></div>
+    </div>
+    <div *ngIf="isAssociate" class="container-nav">
+        <div class="icon"><span><i class="fas fa-envelope"></i></span></div>
+        <div><span>Emails</span></div>
+    </div>
+    <div *ngIf="isAssociate && !isExecutive" [routerLink]="['/create/request']" class="container-nav">
+        <div class="icon"><span><i class="fas fa-envelope"></i></span></div>
+        <div><span>Request Access</span></div>
+    </div>
+    <div *ngIf="isAdmin || isExecutive" [routerLink]="['/view/request']" class="container-nav">
+        <div class="icon"><span><i class="fas fa-envelope"></i></span></div>
+        <div><span>View Requests</span></div>
+    </div>
+    <div *ngIf="isAssociate" class="container-nav">
+        <div class="icon"><span><i class="fas fa-cogs"></i></span></div>
+        <div><span>Settings</span></div>
+    </div>
+</div>
+
+
