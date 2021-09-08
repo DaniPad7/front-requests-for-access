@@ -8,7 +8,20 @@
             <h2>{{ticket.date}}</h2>
             <h4>{{ticket.privileges.role}}</h4>
             <h2>{{ticket.businessJustification.justification}}</h2>
-            <h2>{{ticket.statusOption.status}}</h2>
+            <div [ngSwitch]="ticket.statusOption.status">
+                <div *ngSwitchCase="'PENDING'">
+                    <form [formGroup]="updateTicketForm">
+                        <select formControlName="status" (change)="onUpdateTicket(ticket)" autofocus>
+                            <option value="2">Approve</option>
+                            <option value="3">Reject</option>
+                        </select>
+                    </form>
+                    
+                </div>
+                <div *ngSwitchCase="'REJECTED'"><h2>{{ticket.statusOption.status}}</h2></div>
+                <div *ngSwitchCase="'APPROVED'"><h2>{{ticket.statusOption.status}}</h2></div>
+                <div *ngSwitchDefault>Error</div>
+            </div>
         </div>
     </div>
     <div class="container-footer"><app-footer></app-footer></div>

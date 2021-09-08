@@ -14,9 +14,16 @@ export class DataService {
   constructor(private http: HttpClient, private router: Router) { }
 
   create(resource: string, body: any) {
-    let options = { headers: new HttpHeaders( { 'Content-Type': 'application/json'})};
+    let options = { headers: new HttpHeaders( { 'Content-Type': 'application/json'} ) };
     return this.http.post<any>(`${environment.apiUrl}/${resource}/create`, JSON.stringify(body), options)
       .pipe(map(res => res), catchError(this.handleError));
+  }
+
+  put(resource: string, body: any) {
+    let options = { headers: new HttpHeaders( { 'Content-Type': 'application/json' } ) };
+    return this.http.put<any>(`${environment.apiUrl}/${resource}/user`, JSON.stringify(body), options)
+      .pipe(map(res => res), catchError(this.handleError));
+
   }
 
   findAll(resource: string) {
