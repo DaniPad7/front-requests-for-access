@@ -1,17 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { RequestTicket } from 'src/app/model/request-ticket';
 import { User } from 'src/app/model/user';
 import { TicketService } from 'src/app/services/ticket.service';
 import { UserService } from 'src/app/services/user.service';
+import { threadId } from 'worker_threads';
 
 @Component({
   selector: 'app-view-request',
   templateUrl: './view-request.component.html',
   styleUrls: ['./view-request.component.css']
 })
-export class ViewRequestComponent implements OnInit {
+export class ViewRequestComponent implements OnInit, OnDestroy {
   user!: User;
   empty: User = this.userService.empty;
   subscription!: Subscription;
@@ -20,6 +21,7 @@ export class ViewRequestComponent implements OnInit {
 
   constructor(private userService: UserService, private ticketService: TicketService,
     private formBuilder: FormBuilder) { }
+  
 
   ngOnInit(): void {
     this.userService.currentUserValue;
@@ -29,6 +31,10 @@ export class ViewRequestComponent implements OnInit {
     });
 
     this.ticketService.findAll('ticket').subscribe(success => this.requestTickets = success || []);
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
   onUpdateTicket(ticket: RequestTicket) {
