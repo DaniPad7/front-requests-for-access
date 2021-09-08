@@ -5,7 +5,6 @@ import { RequestTicket } from 'src/app/model/request-ticket';
 import { User } from 'src/app/model/user';
 import { TicketService } from 'src/app/services/ticket.service';
 import { UserService } from 'src/app/services/user.service';
-import { threadId } from 'worker_threads';
 
 @Component({
   selector: 'app-view-request',
