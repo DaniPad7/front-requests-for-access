@@ -23,8 +23,9 @@
   <li>Implement restrictions on what role can approve or reject the request of another role.</li>
   <li>Implement the ability to utilize the refresh token provided by the back-end.</li>
   <li>Implement the feature for users to register.</li>
-<li>Add capability to update personal information.</li>
-
+  <li>Add capability to update personal information.</li>
+  <li>Implement OAuth2 framework using Keycloak.</li>
+  <li>Manage the application state using NgRx.</li>
 </ul>
 <h2>Getting Started</h2>
 <ul> 
